@@ -13,7 +13,7 @@ persist_with: lookml_hol_sample_default_datagroup
 explore: postal_location {}
 
 explore: bizcategory {
-  description: "이 View는 한국 산업 코드 정보를 담고 있습니다. 대분류(Catl1)부터 세분류(CatL4)까지 가지고 있으며, 산업코드를 구분짓는데 사용합니다. "
+  description: "한국 산업 코드 정보를 담고 있습니다. 대분류(Catl1)부터 세분류(CatL4)까지 가지고 있으며, 계층별 산업 코드와 그 명칭만을 가지고 있습니다. "
 }
 
 #explore: bizcategory_vw {}
@@ -51,7 +51,13 @@ explore: bizcategory {
 
 
 explore: national_pension_mom {
-  description: "This view provides monthly company-specific payment details for the National Pension Service. It includes information on the number of employees who contribute to the company's pension, and the amount of pension paid by the company. And also it includes gelocation information."
+  #description: "This view provides monthly company-specific payment details for the National Pension Service. It includes information on the number of employees who contribute to the company's pension, and the amount of pension paid by the company. And also it includes gelocation information."
+  description: "이 화면은 국민연금에 대한 산업별 월 단위 통계 정보를 제공합니다. 제공되는 정보는 다음과 같습니다.
+  평균/총 근로자 수
+  평균/총 연금 납부액
+  평균/총 신규 근로자 수
+  평균/총 실업 근로자 수
+  또한, 이 화면은 월별 통계를 비교할 수 있는 추가적인 기능도 제공합니다."
 
   always_filter: {
     filters : [national_pension_mom.data_create_yearmonth_year: "2022", national_pension_mom.compared_month: "1"]
